@@ -8,5 +8,11 @@
 require 'faker'
 
 10.times do
-    Thing.create(name: Faker::Ancient.unique.god)
+    User.create(
+        email: Faker::Internet.email, 
+        firstName: Faker::Name.first_name,
+        lastName: Faker::Name.last_name,
+        number: Faker::PhoneNumber.cell_phone,
+        avatar: Faker::Avatar.image,
+    )
 end
