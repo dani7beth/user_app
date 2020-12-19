@@ -1,7 +1,8 @@
-import { Card , Image} from "semantic-ui-react";
+import { Card , Grid, Image} from "semantic-ui-react";
 
 const User = ({user}) => (
-  <Card>
+  <Grid.Column>
+    <Card>
     <Image src={user.avatar} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{user.firstName} {user.lastName}</Card.Header>
@@ -13,5 +14,7 @@ const User = ({user}) => (
       </Card.Meta>
     </Card.Content>
   </Card>
+
+  </Grid.Column>
 )
 export default User;
