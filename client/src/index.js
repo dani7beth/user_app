@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import 'antd/dist/antd.css';
+import 'semantic-ui-css/semantic.min.css';
+import UserProvider from './providers/UserProvider';
 
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <UserProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+  </UserProvider>,
   document.getElementById('root')
 );
 

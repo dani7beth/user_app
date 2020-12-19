@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import {Menu} from 'semantic-ui-react';
 
 export default () =>{
     return(
-         <div>
-             <Link to="/">Home</Link>
-             <Link to="/things">Things</Link>
-
-         </div>
+        <Menu>
+            <NavLink to="/">
+                <Menu.Item>Home</Menu.Item>
+            </NavLink>
+            <NavLink to='/users'>
+                    <Menu.Item>Users</Menu.Item>
+            </NavLink>
+        </Menu>
     ) 
  }
