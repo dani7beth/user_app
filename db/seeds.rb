@@ -7,12 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do
-    User.create(
+User.create(
         email: Faker::Internet.email, 
         firstName: Faker::Name.first_name,
         lastName: Faker::Name.last_name,
         number: Faker::PhoneNumber.cell_phone,
         avatar: Faker::Avatar.image,
-    )
-end
+)
+

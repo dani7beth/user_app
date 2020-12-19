@@ -1,35 +1,27 @@
-import { Card , Grid, Image} from "semantic-ui-react";
-import styled from 'styled-components';
+import { useContext } from "react";
+import { Card, Image } from "semantic-ui-react";
+import { UserContext } from "../providers/UserProvider"
 
-const User = ({user}) => (
-  <Grid.Column>
-    <StyledCard>
-    <Image src={user.avatar} wrapped ui={false} />
-    <Truncated>
-    <Card.Content>
-      <Card.Header>{user.firstName} {user.lastName}</Card.Header>
-      <Card.Meta>
-        {user.number}
-      </Card.Meta>
-      <Card.Meta>
-        {user.email}
-      </Card.Meta>
-    </Card.Content>
-    </Truncated>
-  </StyledCard>
-
-  </Grid.Column>
-)
+const User = () =>{
+  const {avatar , firstName, lastName, number, email} = useContext(UserContext)
+ return(
+  
+        <Card>
+        <Image src={avatar} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{firstName} {lastName}</Card.Header>
+          <Card.Meta>
+            {number}
+          </Card.Meta>
+          <Card.Description>
+            {email} 
+          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+         <p>edit</p>
+        </Card.Content>
+      </Card>
+ )
+ 
+}
 export default User;
-
-const Truncated = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
-const StyledCard = styled(Card)`
-  min-height: 200px !important;
-  margin-bottom: 10% !important;
-`;
-

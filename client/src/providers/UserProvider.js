@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Axios from 'axios';
 
 //initial context
-const UserContext = React.createContext();
+export const UserContext = React.createContext();
 
 //create consumer
 export const UserConsumer = UserContext.Consumer;
@@ -17,18 +17,23 @@ class UserProvider extends React.Component{
   //   number: "123-345-4566",
   //   avatar: "somepicture.com"
   // };
-  state = {
-    users: []
-  }
+  state = {};
+  
 
   //make axios call
-  componentDidMount(){
+  componentDidMount = () =>{
     Axios.get(`/api/users`)
     .then((res)=> {
-      const users = res.data;
-      this.setState({users});
+      this.setState(res.data[0]);
+      // console.log(res.data[0]);
     })
   }
+
+  //update user
+  updateUser = (user) => {
+    this.setState({...user});
+  }
+  
 
   render(){
     return(

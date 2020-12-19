@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
 import Home from './Demo/Home';
 import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
-import Users from './components/Users';
+import UserProfile from './components/UserProfile';
+import { Container } from 'semantic-ui-react';
 
-function App() {
-  return (
-    <>
-    
-    <div>
+const App = () => (
+  <>
     <NavBar />
+    <Container>
       <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/users' component={Users} />
+        <Route exact path='/' render={()=><Home />}/>
+        <Route exact path='/user/profile' render={()=><UserProfile />}/>
         <Route component={NoMatch} />
       </Switch>
-    </div>
+      </Container>
     </>
-  )
-}
-
+);
 export default App;
