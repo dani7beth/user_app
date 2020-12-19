@@ -17,9 +17,7 @@ const User = () =>{
             {email} 
           </Card.Description>
         </Card.Content>
-        <Card.Content extra>
-         <p>edit</p>
-        </Card.Content>
+        
       </Card>
  )
  

@@ -17,7 +17,9 @@ class UserProvider extends React.Component{
   //   number: "123-345-4566",
   //   avatar: "somepicture.com"
   // };
-  state = {};
+  state = {
+    updateUser: (user) => this.updateUser(user),
+  };
   
 
   //make axios call
